@@ -1,6 +1,11 @@
-# CRUD
+# Technologies Used
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+-Angular: version 17.2.2
+
+-JSON Server: Backend server for storing todo data
+
+-Bootstrap: CSS framework for styling
+
 
 # Angular Todo List with JSON Server
 
@@ -20,4 +25,11 @@ Before running the project, ensure you have the following installed:
 - Node.js and npm (Node Package Manager)
 - Angular CLI
 - JSON Server
+
+
+## Demo
+
+https://github.com/rawannmmohamed/CRUD-with-JSON-server/assets/76457482/50b97876-9c09-418d-a243-0a3299c70fdb
+
+
 

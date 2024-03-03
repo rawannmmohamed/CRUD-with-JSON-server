@@ -1,0 +1,81 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div
+          class="card"
+          id="list1"
+        >
+          <div class="card-body py-4 px-4 px-md-5">
+            <h1 class="text-center mt-3 mb-4 pb-3">Todo list</h1>
+
+            <div class="pb-2">
+              <div class="card">
+                <div class="card-body">
+                  <form (ngSubmit)="addTodo()">
+                    <div class="d-flex flex-row align-items-center">
+                      <input
+                        type="text"
+                        class="form-control form-control-lg m-2"
+                        id="exampleFormControlInput1"
+                        placeholder="Add new..."
+                        [(ngModel)]="newToDo.title"
+                        [ngModelOptions]="{ standalone: true }"
+                      />
+
+                      <div>
+                        <button type="submit" class="btn btn-secondary">
+                          Add
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+            @for(todo of todos; track todo.id){
+            <ul
+              class="list-group list-group-horizontal rounded-0 bg-transparent"
+            >
+              <li
+                class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent"
+              >
+                <p
+                  class="lead fw-normal mb-0"
+                  [ngClass]="{ 'text-decoration-line-through': todo.completed }"
+                >
+                  {{ todo.title }}
+                </p>
+              </li>
+              <li
+                class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent"
+              >
+                <div class="d-flex flex-row justify-content-end mb-1">
+                  <a
+                    [routerLink]="['/todos', todo.id]"
+                    class="text-info"
+                    data-mdb-toggle="tooltip"
+                    title="Edit todo"
+                    ><i class="fas fa-pencil-alt me-3"></i
+                  ></a>
+                  <a
+                    href="#!"
+                    class="text-danger"
+                    data-mdb-toggle="tooltip"
+                    title="Delete todo"
+                    (click)="deleteTodo(todo.id)"
+                    ><i class="fas fa-trash-alt"></i
+                  ></a>
+                </div>
+              </li>
+            </ul>
+
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

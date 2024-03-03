@@ -1,0 +1,36 @@
+@if(toDo){
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Todo : {{ toDo.title }}</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="updateToDo()">
+        <div class="mb-3">
+          <label for="todoTitle" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="todoTitle"
+            name="title"
+            [(ngModel)]="toDo.title"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="completed"
+            name="completed"
+            [(ngModel)] = "toDo.completed"
+          />
+          <label class="form-check-label" for="completed">Completed</label>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-secondary w-75">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+}
